@@ -84,19 +84,35 @@
 namespace mt {
 
     inline const char* red() {
+#ifndef WIN32
         return "\033[1;31m";
+#else
+        return "";
+#endif
     }
 
     inline const char* green() {
+#ifndef WIN32
         return "\033[0;32m";
+#else
+        return "";
+#endif
     }
 
     inline const char* yellow() {
+#ifndef WIN32
         return "\033[0;33m";
+#else
+        return "";
+#endif
     }
 
     inline const char* def() {
+#ifndef WIN32
         return "\033[0m";
+#else
+        return "";
+#endif
     }
 
     inline void printRunning(const char* message, FILE* file = stdout) {
